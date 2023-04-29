@@ -10,8 +10,8 @@ while (True):
     # by frame
     result, image = camera.read()
 
-    if i==0 and result:
-        cv2.imwrite("Test_photo.png", image)
+    if result:
+        cv2.imwrite(f"img/Test_photo{i}.png", image)
     # Display the resulting frame
     cv2.imshow('frame', image)
 
