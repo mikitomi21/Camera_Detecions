@@ -11,7 +11,7 @@ while (True):
     result, image = camera.read()
 
     if result:
-        cv2.imwrite(f"img/Test_photo{i}.png", image)
+        cv2.imwrite(f"img/F_Humna{i}.png", image)
     # Display the resulting frame
     cv2.imshow('frame', image)
 
