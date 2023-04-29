@@ -1,6 +1,4 @@
 import tensorflow as tf
-import matplotlib.pyplot as plt
-import os
-from pathlib import Path
-from skimage.io import imread, imshow
-from skimage import data
+from tensorflow import keras
+
+(x_train, y_train), (x_val, y_val) = keras.datasets.fashion_mnist.load_data()
