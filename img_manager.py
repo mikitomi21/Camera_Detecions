@@ -1,8 +1,11 @@
-import skimage
-from skimage.transform import resize
+from skimage import transform
 from skimage.io import imread
+from skimage.color import rgb2gray
 import numpy as np
 import os
+
+X_SIZE = 26
+Y_SIZE = 26
 
 def load_data(dir):
     images = []
@@ -10,9 +13,14 @@ def load_data(dir):
     for file in os.listdir(dir):
         path = dir+file
         img = imread(path)
-        resized_img = skimage.transform.resize(img, (80,80))
-        
-        images.append(resized_img)
+
+        # Change a size
+        img = transform.resize(img, (Y_SIZE, X_SIZE))
+
+        # Change a color
+        img = rgb2gray(img)
+
+        images.append(img)
 
         #TODO Think about labels later
         if file[0] == 'T':
