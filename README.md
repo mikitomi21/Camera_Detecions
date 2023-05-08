@@ -1,6 +1,6 @@
 # Face_Detecions
 
-Create a program which using your computer camera detect a human face.
+Create a program using computer camera to detect a human face.
 
 # Results
 ### Green Color -> Human Face<br>
