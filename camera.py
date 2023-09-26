@@ -8,7 +8,7 @@ def draw_border(img, color, thickness=5):
     cv2.rectangle(img, (0, 0), (width, height), color, thickness)
 
 def check_img(path):
-    img = load_img(path, target_size=(200,200))
+    img = load_img(path, target_size=(50,50))
 
     X = img_to_array(img)
     X = np.expand_dims(X, axis = 0)
@@ -23,7 +23,7 @@ def check_img(path):
             return 1
     return 0
 
-model = tf.keras.models.load_model('model/face_reco.h5')
+model = tf.keras.models.load_model('model/face_reco_new.h5')
 
 camera = cv2.VideoCapture(0)
 
