@@ -3,20 +3,15 @@ import cv2
 import tensorflow as tf
 
 def shuffle(imgs: tf.Tensor, labels:tf.Tensor) -> tuple[list:tf.Tensor, list:tf.Tensor]:
-    print("siema1")
     idx = tf.range(tf.shape(labels)[0])
-    print("siema2")
     shuffled_idx = tf.random.shuffle(idx)
-    print("siema3")
     imgs_tmp = tf.gather(imgs, shuffled_idx)
-    print("siema4")
     labels_tmp = tf.gather(labels, shuffled_idx)
-    print("siema5")
     return imgs_tmp, labels_tmp
 
 def load_data() -> tuple[tuple[tf.Tensor, tf.Tensor], tuple[tf.Tensor, tf.Tensor]]:
-    main_paths = ['img/train/', 'img/validation/']
-    size = (50,50)
+    main_paths = ['img/train/', 'img/test/']
+    size = (128, 128)
     is_human = False
     i = 0
     for main_path in main_paths:
@@ -38,6 +33,7 @@ def load_data() -> tuple[tuple[tf.Tensor, tf.Tensor], tuple[tf.Tensor, tf.Tensor
                 i+=1
                 # print(i)
                 if i % 1000 == 0 and i > 0:
+                    break
                     print(f"Uploaded {i} photos")
 
         imgs, labels = tf.constant(imgs), tf.constant(labels)

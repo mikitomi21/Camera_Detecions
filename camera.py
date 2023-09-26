@@ -8,7 +8,7 @@ def draw_border(img, color, thickness=5):
     cv2.rectangle(img, (0, 0), (width, height), color, thickness)
 
 def check_img(path):
-    img = load_img(path, target_size=(50,50))
+    img = load_img(path, target_size=(128, 128))
 
     X = img_to_array(img)
     X = np.expand_dims(X, axis = 0)
