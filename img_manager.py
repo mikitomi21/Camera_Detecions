@@ -11,7 +11,7 @@ def shuffle(imgs: tf.Tensor, labels:tf.Tensor) -> tuple[list:tf.Tensor, list:tf.
 
 def load_data() -> tuple[tuple[tf.Tensor, tf.Tensor], tuple[tf.Tensor, tf.Tensor]]:
     main_paths = ['img/train/', 'img/validation/']
-    size = (26,26)
+    size = (224,224)
     is_human = False
     i = 0
     for main_path in main_paths:
